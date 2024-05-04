@@ -34,11 +34,15 @@ br norbe na
 FOR QUERY FROM DATABASE USING CART LENGTH
 [npm i @tanstack/react-query]
 
-------------------------------DASHBOARD START--------------
+------------------------------DASHBOARD START--------------||
 --> CART.JSX( REACT TABLE [DAISY UI])
 ---------------------------------JWT
 jwt set in authprovider and all users -------
 use INTERCEPTOR[jwt] in secure axios-----
+-----------------------------------------------ADD PRODUCT -------------
+--> use reat formik for add products/item form make   ||
+--> or react hook form 
+
 
 
 

@@ -11,6 +11,10 @@ import Secret from "../provider/Secret";
 import Cart from "../pages/Dashboard/Cart";
 import Alluser from "../pages/Dashboard/dashboard/adminpanel/Alluser";
 import Dashboard from "../pages/Dashboard/dashboard/adminpanel/Dashboard";
+import Additem from "../pages/Dashboard/dashboard/adminpanel/Additem";
+import Manageitems from "../pages/Dashboard/dashboard/adminpanel/Manageitems";
+import Updateitems from "../pages/Dashboard/dashboard/adminpanel/Updateitems";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -54,6 +58,19 @@ export const router = createBrowserRouter([
           element: <Cart></Cart>
         },
         //admin panel
+         {
+          path: 'addItems',
+          element:<Additem/>
+        },
+        {
+          path: 'manageItems',
+          element: <Manageitems />
+        },
+        {
+          path: 'updateItem/:id',
+          element: <Updateitems></Updateitems> ,
+          loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
+        },
         {
           path: 'users',
           element:<Alluser></Alluser>

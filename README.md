@@ -42,7 +42,9 @@ use INTERCEPTOR[jwt] in secure axios-----
 -----------------------------------------------ADD PRODUCT -------------
 --> use reat formik for add products/item form make   ||
 --> or react hook form 
-
+-------------------------------------------- Add payment method ----------
+we usr stripe payment methjod 
+npm install @stripe/react-stripe-js @stripe/stripe-js
 
 
 

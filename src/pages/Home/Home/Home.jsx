@@ -3,8 +3,10 @@ import Banner from '../Banner/Banner'
 import Category from '../Category/Category'
 import PopularMenu from '../popularmenu/PopularMenu'
 import Featured from '../Featured/Featured'
-import Testimonials from '../Tetimonials/Testimonials'
+
 import { Helmet } from 'react-helmet-async'
+import Delyverymaninf from '../../../layout/deliveryman/Delyverymaninf'
+import Testimonial from '../../testimonial/Testimonial'
 
 export default function Home() {
   return (
@@ -16,9 +18,10 @@ export default function Home() {
 
       <Banner />
       <Category />
+      <Delyverymaninf />
       <PopularMenu />
       <Featured />
-      <Testimonials />
+      <Testimonial />
  
     </div>
   )

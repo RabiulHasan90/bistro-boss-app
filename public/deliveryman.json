@@ -1,0 +1,42 @@
+[
+  {
+    "_id": 1,
+    "name": "John Doe",
+    "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
+    "delivery_complete": true,
+    "experience": "5 years",
+    "about": "John is a dedicated delivery specialist with extensive experience in logistics and customer service."
+  },
+  {
+    "_id": 2,
+    "name": "Jane Smith",
+    "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
+    "delivery_complete": false,
+    "experience": "3 years",
+    "about": "Jane is known for her punctuality and excellent communication skills in the delivery sector."
+  },
+  {
+    "_id": 3,
+    "name": "Alice Johnson",
+    "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
+    "delivery_complete": true,
+    "experience": "7 years",
+    "about": "Alice has a strong background in logistics management and ensures timely delivery of goods."
+  },
+  {
+    "_id": 4,
+    "name": "Bob Brown",
+    "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
+    "delivery_complete": false,
+    "experience": "2 years",
+    "about": "Bob is a reliable delivery driver who is always looking to improve his delivery times."
+  },
+  {
+    "_id": 5,
+    "name": "Carol White",
+    "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
+    "delivery_complete": true,
+    "experience": "10 years",
+    "about": "Carol has a decade of experience in delivery services and is highly respected for her efficiency."
+  }
+]

@@ -12,7 +12,8 @@ export default function MenuCategory({img, title, item, stitle}) {
            subHeading={stitle}>
            
         </SectionTitle>
-      {title && <Covers img={img} title={title} />}
+        {title && <Covers img={img} title={title} />}
+        <Link to={`/orderFood/${title}`}>
       <div className='grid md:grid-cols-2 gap-4'>
            {
               item.map(item => <MenuItem
@@ -23,8 +24,8 @@ export default function MenuCategory({img, title, item, stitle}) {
            }
         </div>
        
-        <Link to={`/orderFood/${title}`}>
-           <button>type</button>
+        
+           
         </Link>
     </div>
   )

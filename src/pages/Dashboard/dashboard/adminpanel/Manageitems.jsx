@@ -5,12 +5,13 @@ import Swal from "sweetalert2";
 import useAnxiosSecure from "../../../../hooks/useAnxiosSecure";
 import useMenu from "../../../../hooks/useMenu";
 import axios from "axios";
+import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 
 
 
 export default function Manageitems() {
-   const [menu,  refetch] = useMenu();
-    const axiosSecure = useAnxiosSecure();
+   const [menu,  ,refetch] = useMenu();
+    const axiosPublic = useAxiosPublic()
   
    const handleDeleteItem = (item) => {
       console.log(item)
@@ -24,12 +25,13 @@ export default function Manageitems() {
             confirmButtonText: "Yes, delete it!"
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const res = await axiosSecure.delete(`menu/${item._id}`);
+                const res = await axiosPublic.delete(`menu/${item._id}`);
                 console.log(res.data);
+               
                
                 if (res.data.deletedCount > 0) {
                     // refetch to update the ui
-                     refetch();
+                    
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
@@ -37,6 +39,7 @@ export default function Manageitems() {
                         showConfirmButton: false,
                         timer: 1500
                     });
+                    refetch();
                 }
                //  axiosSecure.delete(`/menu/${item._id}`)
                //      .then(res => {
@@ -55,13 +58,14 @@ export default function Manageitems() {
         });
     }
   return (
-   <div>
-            <SectionTitle heading="Manage All Items" subHeading="Hurry up"></SectionTitle>
+      <div>
+          
+            <SectionTitle Heading="Manage Items" subHeading="Hurry up"></SectionTitle>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
                         {/* head */}
-                        <thead>
+                        <thead className="text-white">
                             <tr>
                                 <th>
                                     #

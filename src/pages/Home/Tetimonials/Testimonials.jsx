@@ -28,8 +28,8 @@ export default function Testimonials() {
       
            {
               review.map( rev => <SwiperSlide key={rev._id}>
-                 <div className='mx-24 flex flex-col items-center'>
-                    <Rating
+                 
+                   <div className='mx-24 flex flex-col items-center'>  <Rating
       style={{ maxWidth: 180 }}
       value={rev.rating}
       readOnly

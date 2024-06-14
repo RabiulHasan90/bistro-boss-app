@@ -24,10 +24,10 @@ export default function Menu() {
       <Covers img={banner} title="our menu" > </Covers>
       <MenuCategory img={banner} title={"popular"} item={popular} />
       <MenuCategory img={banner} title={"desert"} item={dessert} />
-      <MenuCategory img={banner} title={"desert"} item={dessert} />
-      <MenuCategory img={banner} title={"desert"} item={dessert} />
-      <MenuCategory img={banner} title={"desert"} item={dessert} />
-      <MenuCategory img={banner} title={"desert"} item={dessert} />
+      <MenuCategory img={banner} title={"pizza"} item={pizza} />
+      <MenuCategory img={banner} title={"drinks"} item={drinks} />
+      <MenuCategory img={banner} title={"soup"} item={soup} />
+      <MenuCategory img={banner} title={"salad"} item={salad} />
      
     </div>
   )

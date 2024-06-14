@@ -8,11 +8,12 @@ import SectionTitle from '../../../../components/sectiontitle/SectionTitle';
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 export default function Updateitems() {
-   const {name, category, recipe, price, _id} = useLoaderData();
+    const { name, category, recipe, price, _id } = useLoaderData();
+    console.log(name)
 
     const { register, handleSubmit } = useForm();
     const axiosPublic = useAxiosPublic();
-    const axiosSecure = useAnxiosSecure();
+    
     const onSubmit = async (data) => {
         console.log(data)
         // image upload to imgbb and then get an url
@@ -32,7 +33,7 @@ export default function Updateitems() {
                 image: res.data.data.display_url
             }
             // 
-            const menuRes = await axiosSecure.patch(`/menu/${_id}`, menuItem);
+            const menuRes = await axiosPublic.patch(`/menu/${_id}`, menuItem);
             console.log(menuRes.data)
             if(menuRes.data.modifiedCount > 0){
                 // show success popup
@@ -65,7 +66,7 @@ export default function Updateitems() {
                             placeholder="Recipe Name"
                             {...register('name', { required: true })}
                             required
-                            className="input input-bordered w-full" />
+                            className="input input-bordered w-full text-[#0d2c4c]" />
                     </div>
                     <div className="flex gap-6">
                         {/* category */}
@@ -74,7 +75,7 @@ export default function Updateitems() {
                                 <span className="label-text">Category*</span>
                             </label>
                             <select defaultValue={category} {...register('category', { required: true })}
-                                className="select select-bordered w-full">
+                                className="select select-bordered w-full text-[#0d2c4c]">
                                 <option disabled value="default">Select a category</option>
                                 <option value="salad">Salad</option>
                                 <option value="pizza">Pizza</option>
@@ -94,7 +95,7 @@ export default function Updateitems() {
                                 defaultValue={price}
                                 placeholder="Price"
                                 {...register('price', { required: true })}
-                                className="input input-bordered w-full" />
+                                className="input input-bordered w-full text-[#0d2c4c]" />
                         </div>
 
                     </div>
@@ -103,11 +104,11 @@ export default function Updateitems() {
                         <label className="label">
                             <span className="label-text">Recipe Details</span>
                         </label>
-                        <textarea defaultValue={recipe} {...register('recipe')} className="textarea textarea-bordered h-24" placeholder="Bio"></textarea>
+                        <textarea defaultValue={recipe} {...register('recipe')} className="textarea textarea-bordered h-24 text-[#0d2c4c]" placeholder="Bio"></textarea>
                     </div>
 
-                    <div className="form-control w-full my-6">
-                        <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
+                    <div className="form-control w-full my-6 ">
+                        <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs bg-orange-600 text-[#0d2c4c]" />
                     </div>
 
                     <button className="btn">

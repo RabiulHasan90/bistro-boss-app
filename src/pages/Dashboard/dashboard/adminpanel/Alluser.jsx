@@ -7,6 +7,7 @@ import {
 import Swal from "sweetalert2";
 
 export default function Alluser() {
+    const axiosPublic = axiosPublic();
   const axiosSecure = useAnxiosSecure();
      const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
@@ -21,7 +22,7 @@ export default function Alluser() {
         }
      })
    const handleMakeAdmin = user =>{
-        axiosSecure.patch(`/users/admin/${user._id}`)
+      axiosPublic.patch(`/users/admin/${user._id}`)
         .then(res =>{
             console.log(res.data)
             if(res.data.modifiedCount > 0){
@@ -30,6 +31,22 @@ export default function Alluser() {
                     position: "top-end",
                     icon: "success",
                     title: `${user.name} is an Admin Now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
+    }
+     const handleMakeCustomer = user =>{
+        axiosPublic.patch(`/users/admin/${user._id}`)
+        .then(res =>{
+            console.log(res.data)
+            if(res.data.modifiedCount > 0){
+                refetch();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `${user.name} is an Customer now!`,
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -48,7 +65,7 @@ export default function Alluser() {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axiosSecure.delete(`/users/${user._id}`)
+                axios.delete(`/users/${user._id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             refetch();
@@ -66,10 +83,11 @@ export default function Alluser() {
 
 
   return (
-    <div><div className="flex justify-evenly my-4">
+    <div><div className="flex justify-evenly my-4 " style={{ color:'red',backgroundColor: 'rgba(11, 0, 0, 0.5)' }}>
                 <h2 className="text-3xl">All Users</h2>
                 <h2 className="text-3xl">Total Users: {users.length}</h2>
-    </div>
+      </div>
+          <p className="underline ">[ <span className="text-red-600 text-3xl">Note</span>: if you double click user make past role]</p>
      <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
                     {/* head */}
@@ -82,14 +100,14 @@ export default function Alluser() {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className=" text text-orange-600" >
                         {
                             users.map((user, index) => <tr key={user._id}>
                                 <th>{index + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>
-                                    { user.role === 'admin' ? 'Admin' : <button
+                                    { user.role === 'admin' ? <button  onClick={() => handleMakeCustomer(user)}> Admin </button> : <button
                                         onClick={() => handleMakeAdmin(user)}
                                         className="btn btn-lg bg-orange-500">
                                         <FaUsers className="text-white 

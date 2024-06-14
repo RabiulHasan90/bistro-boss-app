@@ -6,11 +6,11 @@ export default function MenuItem({ item }) {
      <div className='flex'>
         <img style={{borderRadius:"0 200px 200px 200px "}} className='w-[100px]' src={image} alt="" />
         <div>
-           <p className='uppercase'>{name}-------</p>
+           <p className='uppercase'>{name}----</p>
            <p>{recipe}</p>
            
         </div>
-        <p className='text-yellow-700'>{price }</p>
+        <p className='text-yellow-600'>{price }</p>
     </div>
   )
 }

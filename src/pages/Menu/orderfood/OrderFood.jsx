@@ -31,8 +31,9 @@ export default function orderFood() {
         <Tab>popular </Tab>
         <Tab>Dessert</Tab>
         <Tab>pizza</Tab>
-        <Tab>Title 2</Tab>
-        <Tab>Title 2</Tab>
+        <Tab>drinks </Tab>
+        <Tab>soup</Tab>
+        <Tab>salad</Tab>
       </TabList>
         <TabPanel >
          
@@ -42,10 +43,11 @@ export default function orderFood() {
         <TabPanel>
            <Ordertab  items={dessert}/>
       </TabPanel>
-      <TabPanel></TabPanel>
-      <TabPanel></TabPanel>
-      <TabPanel></TabPanel>
+      <TabPanel><Ordertab  items={pizza}/></TabPanel>
+      <TabPanel><Ordertab  items={drinks}/></TabPanel>
+      <TabPanel><Ordertab  items={soup}/></TabPanel>
+      <TabPanel><Ordertab  items={salad}/></TabPanel>
     </Tabs>
-    </div>
+    </div> 
   )
 }

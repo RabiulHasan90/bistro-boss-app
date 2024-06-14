@@ -14,7 +14,7 @@ export default function Cartdeli() {
     console.log("cart", cart.length);
   
     const handleAccept = id => {
-        axios.patch(`http://localhost:5000/carts/${id}`)
+        axios.patch(`https://bistro-boss-server-ten-psi.vercel.app/carts/${id}`)
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
@@ -44,7 +44,7 @@ export default function Cartdeli() {
             confirmButtonText: "Yes, Delivered it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/carts/${_id}`)
+                axios.delete(`https://bistro-boss-server-ten-psi.vercel.app/carts/${_id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             const cartItem = {
@@ -57,7 +57,7 @@ export default function Cartdeli() {
                                 Response: "Recieved",
                                 date: new Date().toISOString().split('T')[0]
                             };
-                            axios.post('http://localhost:5000/stores', cartItem)
+                            axios.post('https://bistro-boss-server-ten-psi.vercel.app/stores', cartItem)
                                 .then(res => {
                                     console.log(res.data);
                                     if (res.data.insertedId) {
@@ -74,7 +74,7 @@ export default function Cartdeli() {
                         }
                     });
 
-                axios.patch(`http://localhost:5000/delivers/${user.email}`)
+                axios.patch(`https://bistro-boss-server-ten-psi.vercel.app/delivers/${user.email}`)
                     .then(res => {
                         console.log(res.data);
                         if (res.data.modifiedCount > 0) {

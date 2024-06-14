@@ -10,7 +10,7 @@
 //    const { data: stats = {} } = useQuery({
 //     queryKey: ['admin-stats'],
 //     queryFn: async () => {
-//       const res = await axios.get('http://localhost:5000/delivery-stats');
+//       const res = await axios.get('https://bistro-boss-server-ten-psi.vercel.app/delivery-stats');
 //       return res.data;
 //     }
 //   });
@@ -84,7 +84,7 @@ export default function DelivermanHome() {
   const { data: stats = {} } = useQuery({
     queryKey: ['admin-stats'],
     queryFn: async () => {
-      const res = await axios.get('http://localhost:5000/delivery-stats');
+      const res = await axios.get('https://bistro-boss-server-ten-psi.vercel.app/delivery-stats');
       return res.data;
     }
   });

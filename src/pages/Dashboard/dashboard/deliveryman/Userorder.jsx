@@ -9,7 +9,7 @@ export default function Userorder() {
    const [, refetch] = useCart2();
    const ucart = useLoaderData()
      const handleAccept = id => {
-        axios.patch(`http://localhost:5000/carts/${id}`)
+        axios.patch(`https://bistro-boss-server-ten-psi.vercel.app/carts/${id}`)
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {

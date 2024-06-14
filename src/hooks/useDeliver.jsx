@@ -9,7 +9,7 @@ export default function useDeliver() {
    const {refetch , data: delivers = [] } = useQuery({
       queryKey: ['delivers'],
       queryFn: async () => {
-         const res = await axios.get(`http://localhost:5000/delivers`);
+         const res = await axios.get(`https://bistro-boss-server-ten-psi.vercel.app/delivers`);
          return res.data;
       }
       
@@ -18,7 +18,7 @@ export default function useDeliver() {
 //    const { data: cart = [] } = useQuery({
 //       queryKey: ['cart'],
 //       queryFn: async () => {
-//          const res = await axios.get('http://localhost:5000/carts');
+//          const res = await axios.get('https://bistro-boss-server-ten-psi.vercel.app/carts');
 //          return res.data;
 //       }
 //    })

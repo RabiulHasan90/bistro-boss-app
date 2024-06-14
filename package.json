@@ -17,8 +17,9 @@
     "apexcharts": "^3.49.1",
     "axios": "^1.6.8",
     "chart.js": "^4.4.3",
-    "firebase": "^10.10.0",
+    "firebase": "^10.12.2",
     "framer-motion": "^11.2.9",
+    "init": "^0.1.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.3.1",
@@ -54,5 +55,17 @@
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.0"
-  }
+  },
+  "description": "1. react router 2. tailwind css 3. daisy ui 4. react awesome components [https://github.com/brillout/awesome-react-components] swiper demo{https://swiperjs.com/demos} ----------------------------------MENU------------------------------------------ 5. parallax --> scroll korle ekta pic norbe a, br norbe na 6. star react rating [npm i @smastrom/react-rating] 7. react helmet [npm i react-helmet-async{https://www.npmjs.com/package/react-helmet-async}] 8. react paralax[npm i react-parallax {https://www.npmjs.com/package/react-parallax}]",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RabiulHasan90/bistro-boss-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RabiulHasan90/bistro-boss-app/issues"
+  },
+  "homepage": "https://github.com/RabiulHasan90/bistro-boss-app#readme"
 }

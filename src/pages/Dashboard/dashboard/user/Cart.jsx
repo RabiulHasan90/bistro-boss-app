@@ -25,7 +25,7 @@ export default function Cart() {
         }).then((result) => {
             if (result.isConfirmed) {
 
-              axios.delete(`http://localhost:5000/carts/${id}`)
+              axios.delete(`https://bistro-boss-server-ten-psi.vercel.app/carts/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             refetch();

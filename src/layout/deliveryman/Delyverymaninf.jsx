@@ -7,7 +7,7 @@ export default function Delyverymaninf() {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/delivers')
+    axios.get('https://bistro-boss-server-ten-psi.vercel.app/delivers')
       .then(response => {
         // Assuming 'orderCount' is the property representing the number of orders
         const sortedPeople = response.data.sort((a, b) => b.order - a.order);

@@ -8,7 +8,7 @@ export default function useCart() {
    const {refetch , data: cart = [] } = useQuery({
       queryKey: ['cart', user?.email],
       queryFn: async () => {
-         const res = await axios.get(`http://localhost:5000/carts?email=${user.email}`);
+         const res = await axios.get(`https://bistro-boss-server-ten-psi.vercel.app/carts?email=${user.email}`);
          return res.data;
       }
       
@@ -17,7 +17,7 @@ export default function useCart() {
 //    const { data: cart = [] } = useQuery({
 //       queryKey: ['cart'],
 //       queryFn: async () => {
-//          const res = await axios.get('http://localhost:5000/carts');
+//          const res = await axios.get('https://bistro-boss-server-ten-psi.vercel.app/carts');
 //          return res.data;
 //       }
 //    })
